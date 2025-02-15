@@ -1,3 +1,8 @@
 theme = Github Dark
 font-size = 16
 window-padding-x = 12
+font-thicken = true
+macos-titlebar-style = transparent
+macos-titlebar-proxy-icon = hidden
+macos-option-as-alt = true
+confirm-close-surface = false

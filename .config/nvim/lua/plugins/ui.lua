@@ -33,10 +33,6 @@ return {
     end,
   },
   {
-    "Bekaboo/dropbar.nvim",
-    opts = {},
-  },
-  {
     "akinsho/toggleterm.nvim",
     version = "*",
     opts = {
@@ -68,8 +64,8 @@ return {
       },
       view = {
         adaptive_size = false,
-        side = "left",
-        width = 20,
+        side = "right",
+        width = 30,
       },
       git = {
         enable = true,
