@@ -21,6 +21,7 @@ if [[ $(uname -m) == 'arm64' ]]; then
   export ARCHFLAGS="-arch arm64"
   export QUARTO_PYTHON="/opt/homebrew/bin/python3"
   export RETICULATE_PYTHON="/opt/homebrew/bin/python3"
+  export XDG_CONFIG_HOME="$HOME/.config"
 fi
 
 source $HOME/antigen.zsh
@@ -103,6 +104,7 @@ alias h="cd $HOME"
 alias s="source $HOME/.zshrc"
 alias rc="nvim $HOME/.zshrc"
 alias myip="curl https://checkip.dydns.org/ | sed 's/[a-zA-Z<>/ :]//g'"
+alias f=spf
 
 # tmux
 alias tm=tmux
@@ -136,13 +138,3 @@ eval "$(zoxide init zsh)"
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/leejin/.cache/lm-studio/bin"
-
-# yazi wrapper
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}

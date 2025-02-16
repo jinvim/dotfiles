@@ -155,31 +155,32 @@ return {
     },
   },
   {
-    "mikavilpas/yazi.nvim",
+    "stevearc/oil.nvim",
     event = "VeryLazy",
     keys = {
       {
         "<leader>j",
         mode = { "n", "v" },
-        "<cmd>Yazi<cr>",
-        desc = "open yazi at the current file",
+        "<cmd>Oil --float<cr>",
+        desc = "open file browser (float)",
       },
       {
-        -- Open in the current working directory
-        "<leader>fw",
-        "<cmd>Yazi cwd<cr>",
-        desc = "open yazi in working directory",
-      },
-      {
-        "<leader>fy",
-        "<cmd>Yazi toggle<cr>",
-        desc = "resume the last yazi session",
+        "<leader>J",
+        mode = { "n", "v" },
+        "<cmd>Oil<cr>",
+        desc = "open file browser (buffer)",
       },
     },
     opts = {
-      open_for_directories = false,
+      float = {
+        max_width = 0.7,
+        max_height = 0.7,
+      },
       keymaps = {
-        show_help = "<f1>",
+        ["H"] = "actions.parent",
+        ["L"] = "actions.select",
+        ["J"] = "actions.open_cwd",
+        ["q"] = { "actions.close", mode = "n" },
       },
     },
   },
