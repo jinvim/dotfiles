@@ -138,3 +138,25 @@ eval "$(zoxide init zsh)"
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/leejin/.cache/lm-studio/bin"
+
+# spf cd on quit
+spf() {
+    os=$(uname -s)
+
+    # Linux
+    if [[ "$os" == "Linux" ]]; then
+        export SPF_LAST_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/superfile/lastdir"
+    fi
+
+    # macOS
+    if [[ "$os" == "Darwin" ]]; then
+        export SPF_LAST_DIR="$HOME/Library/Application Support/superfile/lastdir"
+    fi
+
+    command spf "$@"
+
+    [ ! -f "$SPF_LAST_DIR" ] || {
+        . "$SPF_LAST_DIR"
+        rm -f -- "$SPF_LAST_DIR" > /dev/null
+    }
+}

@@ -54,6 +54,7 @@ return {
   },
   { "echasnovski/mini.bracketed", opts = {} },
   { "echasnovski/mini.cursorword", opts = {} },
+  { "echasnovski/mini.ai", opts = {} },
   {
     "echasnovski/mini.move",
     opts = {
