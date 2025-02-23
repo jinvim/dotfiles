@@ -1,15 +1,5 @@
 return {
   {
-    "lukas-reineke/indent-blankline.nvim",
-    event = "BufRead",
-    main = "ibl",
-    opts = {
-      indent = {
-        char = "┊",
-      },
-    },
-  },
-  {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     opts = {
@@ -19,8 +9,13 @@ return {
       },
     },
   },
-  "tpope/vim-repeat",
-  "ggandor/lightspeed.nvim",
+  {
+    "ggandor/leap.nvim",
+    dependencies = { "tpope/vim-repeat" },
+    config = function()
+      require("leap").create_default_mappings()
+    end,
+  },
   {
     "kylechui/nvim-surround",
     event = "VeryLazy",

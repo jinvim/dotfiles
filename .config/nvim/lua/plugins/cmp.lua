@@ -8,6 +8,7 @@ return {
       keymap = {
         preset = 'super-tab',
         ['<C-k>'] = {},
+        ['<C-e>'] = { function(cmp) cmp.show() end },
       },
       appearance = {
         use_nvim_cmp_as_default = true,

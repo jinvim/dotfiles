@@ -237,6 +237,13 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
 ###############################################################################
+# Calendar                                                                    #
+###############################################################################
+
+# Change week view to 10 days
+defaults write com.apple.iCal n\ days\ of\ week 10
+
+###############################################################################
 # Kill/restart affected applications                                          #
 ###############################################################################
 

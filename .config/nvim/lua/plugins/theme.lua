@@ -9,12 +9,13 @@ return {
       require("github-theme").setup({
         -- ...
       })
-      vim.cmd("colorscheme github_dark_default")
-      vim.cmd("hi Normal guibg=None ctermbg=None")
-      vim.cmd("hi NormalNC guibg=None ctermbg=None")
-      vim.cmd("hi EndOfBuffer guibg=None ctermbg=None")
-      vim.cmd("hi NormalFloat guibg=None ctermbg=None")
-      vim.cmd("hi NvimTreeNormal guibg=None ctermbg=None")
+      vim.cmd.colorscheme("github_dark_default")
+      vim.cmd.highlight("Normal guibg=None ctermbg=None")
+      vim.cmd.highlight("NormalNC guibg=None ctermbg=None")
+      vim.cmd.highlight("EndOfBuffer guibg=None ctermbg=None")
+      vim.cmd.highlight("NormalFloat guibg=None ctermbg=None")
+      vim.cmd.highlight("NvimTreeNormal guibg=None ctermbg=None")
+      vim.cmd.highlight("NvimTreeNormal guibg=None ctermbg=None")
     end,
   },
 }

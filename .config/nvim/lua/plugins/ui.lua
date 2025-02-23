@@ -146,6 +146,14 @@ return {
     },
   },
   {
+    "stevearc/aerial.nvim",
+    cmd = { "AerialToggle" },
+    opts = {},
+    keys = {
+      { "<leader>o", "<cmd>AerialToggle<cr>", mode = { "n" }, desc = "code outline" },
+    },
+  },
+  {
     "j-hui/fidget.nvim",
     tag = "legacy",
     event = "VimEnter",
