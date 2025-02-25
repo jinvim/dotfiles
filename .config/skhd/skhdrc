@@ -5,6 +5,8 @@ lalt + ctrl + shift - w : yabai --restart-service
 # Restart skhd
 lalt + ctrl + shift - k : skhd --restart-service
 
+# Restart sketchybar
+lalt + ctrl + shift - b : brew services restart sketchybar
 # Yabai Commands
 
 ## Focus window

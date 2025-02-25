@@ -31,8 +31,8 @@ opt.fileencoding = 'utf-8'
 opt.undofile = true
 
 -- ui
-opt.number = true
-opt.relativenumber = true
+opt.number = false
+opt.relativenumber = false
 
 -- opt.cursorline = true
 opt.signcolumn = 'yes'
@@ -74,3 +74,10 @@ vim.api.nvim_create_autocmd('InsertLeave', {
     pattern = '*',
     command = 'set nopaste'
 })
+
+
+-- signs
+vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError' })
+vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn' })
+vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
+vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })

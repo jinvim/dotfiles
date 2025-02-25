@@ -1,8 +1,10 @@
-theme = Github Dark
+theme = base16-black-metal-khold
 font-size = 16
 window-padding-x = 12
+window-padding-y = 8,2
 font-thicken = true
-macos-titlebar-style = transparent
+macos-titlebar-style = hidden
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
 confirm-close-surface = false
+background-opacity = 0.90
