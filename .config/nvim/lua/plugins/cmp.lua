@@ -1,21 +1,22 @@
 return {
   {
-    'saghen/blink.cmp',
+    "saghen/blink.cmp",
     -- optional: provides snippets for the snippet source
-    dependencies = 'rafamadriz/friendly-snippets',
-    version = '*',
+    dependencies = "rafamadriz/friendly-snippets",
+    version = "*",
     opts = {
       keymap = {
-        preset = 'super-tab',
-        ['<C-k>'] = {},
-        ['<C-e>'] = { function(cmp) cmp.show() end },
+        preset = "super-tab",
+        ["<C-k>"] = {},
+        ["<C-e>"] = { function(cmp) cmp.show() end },
+        ["<C-y>"] = { "select_and_accept" },
       },
       appearance = {
         use_nvim_cmp_as_default = true,
-        nerd_font_variant = 'mono'
+        nerd_font_variant = "mono",
       },
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer' },
+        default = { "lsp", "path", "snippets", "buffer" },
       },
       completion = {
         documentation = {
@@ -24,6 +25,6 @@ return {
         },
       },
     },
-    opts_extend = { "sources.default" }
-  }
+    opts_extend = { "sources.default" },
+  },
 }
