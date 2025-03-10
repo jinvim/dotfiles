@@ -1,4 +1,4 @@
-theme = base16-black-metal-khold
+theme = gruvbox-material-hard-dark
 font-size = 16
 window-padding-x = 12
 window-padding-y = 8,2

@@ -1,11 +1,11 @@
 return {
   -- themes
   {
-    "RRethy/base16-nvim" ,
+    "sainnhe/gruvbox-material" ,
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      vim.cmd.colorscheme("base16-black-metal-khold")
+      vim.cmd.colorscheme("gruvbox-material")
       vim.cmd.highlight("Normal guibg=None ctermbg=None")
       vim.cmd.highlight("NormalNC guibg=None ctermbg=None")
       vim.cmd.highlight("EndOfBuffer guibg=None ctermbg=None")
