@@ -101,9 +101,3 @@ yabai -m rule --add title="^MiniPlayer$" manage=off
 
 yabai -m config external_bar all:24:0
 # yabai -m config external_bar all:0:24
-
-# Always focus on windows in space when chancing space
-
-# https://github.com/koekeishiya/yabai/issues/719
-# # focus window after active space changes
-yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"

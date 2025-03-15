@@ -7,6 +7,10 @@ return {
         write_to_disk = true,
       },
     },
+    enabled = function()
+      -- Only enable this plugin on macOS
+      return vim.loop.os_uname().sysname == "Darwin"
+    end,
   },
   {
     "quarto-dev/quarto-nvim",
@@ -23,6 +27,10 @@ return {
         never_run = { "yaml" },
       },
     },
+    enabled = function()
+      -- Only enable this plugin on macOS
+      return vim.loop.os_uname().sysname == "Darwin"
+    end,
   },
   {
     "Vigemus/iron.nvim",
@@ -77,6 +85,10 @@ return {
       { "<leader>i<cr>", function() require("iron.core").send(nil, string.char(13)) end, desc = "cr" },
       { "<leader>ic", function() require("iron.core").send(nil, string.char(03)) end, desc = "interrupt" },
     },
+    enabled = function()
+      -- Only enable this plugin on macOS
+      return vim.loop.os_uname().sysname == "Darwin"
+    end,
   },
   {
     "jmbuhr/telescope-zotero.nvim",
@@ -86,6 +98,10 @@ return {
         "nvim-telescope/telescope.nvim",
       },
     },
+    enabled = function()
+      -- Only enable this plugin on macOS
+      return vim.loop.os_uname().sysname == "Darwin"
+    end,
     opts = {},
     config = function(_, opts)
       require("zotero").setup(opts)
