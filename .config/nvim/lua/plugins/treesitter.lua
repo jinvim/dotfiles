@@ -6,7 +6,7 @@ return {
       local ts = require("nvim-treesitter.configs")
       ts.setup({
         ignore_install = {},
-        ensure_installed = { "org" },
+        ensure_installed = {},
         highlight = {
           enable = true,
           disable = { "stata" },
