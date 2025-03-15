@@ -103,6 +103,9 @@ return {
 
         -- notebook
         { "<leader>n", group = "notebook" },
+
+        -- iron.nvim
+        { "<leader>i", group = "iron" },
       })
     end,
   },
