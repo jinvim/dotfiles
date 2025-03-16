@@ -11,6 +11,7 @@ return {
       -- Only enable this plugin on macOS
       return vim.loop.os_uname().sysname == "Darwin"
     end,
+    ft = { "quarto" },
   },
   {
     "quarto-dev/quarto-nvim",
@@ -31,10 +32,10 @@ return {
       -- Only enable this plugin on macOS
       return vim.loop.os_uname().sysname == "Darwin"
     end,
+    ft = { "quarto" },
   },
   {
     "Vigemus/iron.nvim",
-    event = "VeryLazy",
     config = function()
       local iron = require("iron.core")
       local view = require("iron.view")
@@ -89,6 +90,7 @@ return {
       -- Only enable this plugin on macOS
       return vim.loop.os_uname().sysname == "Darwin"
     end,
+    ft = { "python", "r" },
   },
   {
     "jmbuhr/telescope-zotero.nvim",
@@ -98,15 +100,16 @@ return {
         "nvim-telescope/telescope.nvim",
       },
     },
-    enabled = function()
-      -- Only enable this plugin on macOS
-      return vim.loop.os_uname().sysname == "Darwin"
-    end,
     opts = {},
     config = function(_, opts)
       require("zotero").setup(opts)
       local telescope = require("telescope")
       telescope.load_extension("zotero")
     end,
+    enabled = function()
+      -- Only enable this plugin on macOS
+      return vim.loop.os_uname().sysname == "Darwin"
+    end,
+    ft = { "quarto" },
   },
 }
