@@ -97,6 +97,7 @@ yabai -m rule --add app="^Font Book$" manage=off
 yabai -m rule --add app="^Digital Colou?r Meter$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
 yabai -m rule --add title="^MiniPlayer$" manage=off
+yabai -m rule --add title="^Zotero$" title="Citation Dialog" manage=off
 # yabai -m rule --add app="^Finder$" manage=off
 
 yabai -m config external_bar all:24:0

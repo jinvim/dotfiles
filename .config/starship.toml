@@ -1,32 +1,26 @@
-add_newline = false
-
+add_newline = true
 
 format = """
-$character\
 $username\
 $hostname\
 $directory\
 $git_branch\
 $git_state\
 $git_status\
-$python"""
+$cmd_duration\
+$line_break\
+$python\
+$character"""
 
 right_format = "$time"
-
-[time]
-style = "bold bright-black"
-format = "[$time]($style)"
-disabled = false
-# time_format = "%H:%M"
-
 
 [directory]
 style = "blue"
 
 [character]
-success_symbol = "[](white)"
-error_symbol = "[](red)"
-vimcmd_symbol = "[](yellow)"
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
 
 [git_branch]
 format = "[$branch]($style)"
@@ -35,6 +29,13 @@ style = "bright-black"
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
 style = "cyan"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
@@ -48,6 +49,9 @@ style = "yellow"
 format = "[$virtualenv]($style) "
 style = "bright-black"
 
-
-[line_break]
-disabled = true
+[time]
+disabled = false
+format = "[ $time]($style)"
+time_format = "%R"
+utc_time_offset = "local"
+style = "italic dimmed white"

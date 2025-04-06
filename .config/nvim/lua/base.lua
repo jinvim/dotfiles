@@ -10,23 +10,23 @@ opt.updatetime = 50
 
 opt.scrolloff = 8
 
-opt.backspace = 'indent,eol,start'
+opt.backspace = "indent,eol,start"
 
-opt.clipboard = 'unnamedplus'
+opt.clipboard = "unnamedplus"
 
 opt.history = 50
 
-opt.mouse = 'a'
+opt.mouse = "a"
 
-api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
+api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
 
-g.mapleader = ' '
-g.maplocalleader = ' '
+g.mapleader = " "
+g.maplocalleader = " "
 
 --file management
-vim.scriptencoding = 'utf-8'
-opt.encoding = 'utf-8'
-opt.fileencoding = 'utf-8'
+vim.scriptencoding = "utf-8"
+opt.encoding = "utf-8"
+opt.fileencoding = "utf-8"
 
 opt.undofile = true
 
@@ -35,12 +35,12 @@ opt.number = false
 opt.relativenumber = false
 
 -- opt.cursorline = true
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 opt.cmdheight = 1
 -- opt.pumheight = 10
 opt.pumblend = 15
 opt.winblend = 15
-opt.background = 'dark'
+opt.background = "dark"
 
 opt.title = true
 opt.showtabline = 0
@@ -57,7 +57,7 @@ opt.autoindent = true
 opt.breakindent = true
 
 opt.list = true
-opt.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
+opt.listchars = "trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂"
 
 opt.splitright = true
 opt.splitbelow = true
@@ -67,17 +67,27 @@ opt.smartcase = true
 opt.hlsearch = false
 opt.incsearch = true
 
-
 -- other
 -- Turn off paste mode when leaving insert
-vim.api.nvim_create_autocmd('InsertLeave', {
-    pattern = '*',
-    command = 'set nopaste'
+vim.api.nvim_create_autocmd("InsertLeave", {
+  pattern = "*",
+  command = "set nopaste",
 })
 
-
 -- signs
-vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError' })
-vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn' })
-vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
-vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "",
+      [vim.diagnostic.severity.WARN] = "",
+      [vim.diagnostic.severity.INFO] = "",
+      [vim.diagnostic.severity.HINT] = "",
+    },
+    texthl = {
+      [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+      [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+      [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+      [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+    },
+  },
+})
