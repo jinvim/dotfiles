@@ -17,11 +17,6 @@ return {
     end,
   },
   {
-    "kylechui/nvim-surround",
-    event = "VeryLazy",
-    opts = {},
-  },
-  {
     "NvChad/nvim-colorizer.lua",
     event = "BufRead",
     opts = {
@@ -51,6 +46,20 @@ return {
   { "echasnovski/mini.cursorword", opts = {} },
   { "echasnovski/mini.ai", opts = {} },
   {
+    "echasnovski/mini.surround",
+    opts = {
+      mappings = {
+        add = "ys",
+        delete = "ds",
+        find = "",
+        find_left = "",
+        highlight = "",
+        replace = "cs",
+        update_n_lines = "",
+      },
+    },
+  },
+  {
     "echasnovski/mini.move",
     opts = {
       mappings = {
@@ -68,18 +77,8 @@ return {
     },
   },
   {
-    "Wansmer/treesj",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    opts = { use_default_keymaps = false },
-    keys = {
-      {
-        "<leader>m",
-        function()
-          require("treesj").toggle()
-        end,
-        desc = "split/join",
-      },
-    },
+    "echasnovski/mini.splitjoin",
+    opts = { mappings = { toggle = "<leader>m" } },
   },
   {
     "stevearc/conform.nvim",

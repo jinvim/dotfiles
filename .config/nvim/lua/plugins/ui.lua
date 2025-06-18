@@ -1,6 +1,4 @@
 return {
-  -- dashboard
-  { "echasnovski/mini.starter", opts = {} },
   -- icons
   "kyazdani42/nvim-web-devicons",
   -- status line
@@ -17,13 +15,24 @@ return {
         sections = {
           lualine_a = {},
           lualine_b = {},
-          lualine_c = { "filename", "diagnostics", "diff" },
-          lualine_x = { "branch", "location", },
+          lualine_c = { "diagnostics", "diff" },
+          lualine_x = { "branch", "location" },
           lualine_y = {},
           lualine_z = {},
         },
       }
     end,
+  },
+  -- breadcrumbs
+  {
+    "LunarVim/breadcrumbs.nvim",
+    dependencies = {
+      {
+        "SmiteshP/nvim-navic",
+        opts = { lsp = { auto_attach = true } },
+      },
+    },
+    opts = {},
   },
   -- tmux & windows
   "szw/vim-maximizer",

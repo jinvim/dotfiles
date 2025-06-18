@@ -2,6 +2,8 @@ local map = vim.keymap.set -- for conciseness
 
 -- delete single character without copying into register
 map("n", "x", '"_x')
+-- change without copying into register
+map("n", "c", '"_c')
 
 -- navigate within insert mode
 map("i", "<C-h>", "<Left>")

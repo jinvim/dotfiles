@@ -14,8 +14,8 @@ return {
       -- configure telescope
       telescope.setup({
         defaults = {
-          prompt_prefix = "",
-          selection_caret = "  ",
+          prompt_prefix = "󰭎 ",
+          selection_caret = "> ",
           entry_prefix = "  ",
           initial_mode = "insert",
           selection_strategy = "reset",
@@ -41,8 +41,7 @@ return {
           path_display = { "truncate" },
           winblend = 0,
           border = true,
-          -- borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
-          borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+          borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
           color_devicons = false,
           set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
           file_previewer = require("telescope.previewers").vim_buffer_cat.new,
