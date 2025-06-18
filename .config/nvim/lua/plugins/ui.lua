@@ -16,9 +16,24 @@ return {
           lualine_a = {},
           lualine_b = {},
           lualine_c = { "diagnostics", "diff" },
-          lualine_x = { "branch", "location" },
-          lualine_y = {},
-          lualine_z = {},
+          lualine_x = {
+            {
+              "lsp_status",
+              icon = "󰈮", -- f013
+              symbols = {
+                -- Standard unicode symbols to cycle through for LSP progress:
+                spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
+                -- Standard unicode symbol for when LSP is done:
+                done = "✓",
+                -- Delimiter inserted between LSP names:
+                separator = " ",
+              },
+              -- List of LSP names to ignore (e.g., `null-ls`):
+              ignore_lsp = {},
+            },
+          },
+          lualine_y = { "searchcount" },
+          lualine_z = { "branch" },
         },
       }
     end,
@@ -74,15 +89,6 @@ return {
       height = 5,
       auto_preview = false,
       use_diagnostic_sings = true,
-    },
-  },
-  {
-    "j-hui/fidget.nvim",
-    tag = "legacy",
-    event = "VimEnter",
-    opts = {
-      text = { spinner = "dots_snake" },
-      window = { blend = 0 },
     },
   },
   {
