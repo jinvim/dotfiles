@@ -49,19 +49,19 @@ return {
               command = { "zsh" },
             },
             python = {
-              command = { "ipython", "--no-autoindent", "-i" },
+              command = { "ipython", "--no-autoindent", "-i", "--no-confirm-exit"},
               format = common.bracketed_paste,
-              block_deviders = { "# %%", "#%%", "```" },
+              block_dividers = { "# %%", "#%%", "```" },
             },
             r = {
               command = { "radian" },
               format = common.bracketed_paste,
-              block_deviders = { "```" },
+              block_dividers = { "```" },
             },
             -- stata = {
             --   command = { "stata-mp" },
             --   format = common.bracketed_paste,
-            --   block_deviders = { "```" },
+            --   block_dividers = { "```" },
             -- },
           },
           repl_filetype = function(_, ft)

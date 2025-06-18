@@ -31,12 +31,15 @@ opt.fileencoding = "utf-8"
 opt.undofile = true
 
 -- ui
-opt.number = false
-opt.relativenumber = false
+opt.number = true
+opt.relativenumber = true
 
 -- opt.cursorline = true
 opt.signcolumn = "yes"
-opt.cmdheight = 1
+-- toggle cmdheight when using macro
+opt.cmdheight=0
+vim.cmd [[ autocmd RecordingEnter * set cmdheight=1 ]]
+vim.cmd [[ autocmd RecordingLeave * set cmdheight=0 ]]
 -- opt.pumheight = 10
 opt.pumblend = 15
 opt.winblend = 15

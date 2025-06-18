@@ -15,97 +15,19 @@ return {
           globalstatus = true,
         },
         sections = {
-          lualine_a = {
-            {
-              "mode",
-              fmt = function(str)
-                return str:sub(1, 1)
-              end,
-            },
-          },
+          lualine_a = {},
           lualine_b = {},
-          lualine_c = { "branch", "diff", "diagnostics" },
-          lualine_x = { "filename", "location" },
+          lualine_c = { "filename", "diagnostics", "diff" },
+          lualine_x = { "branch", "location", },
           lualine_y = {},
           lualine_z = {},
         },
       }
     end,
   },
-  {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    opts = {
-      open_mapping = nil,
-      shade_terminals = false,
-    },
-    keys = {
-      { "<leader>`", "<cmd>ToggleTerm<cr>", desc = "toggle term" },
-      { "<C-`>", "<cmd>ToggleTerm<cr>", desc = "toggle term", mode = { "n", "v", "i", "t" } },
-    },
-  },
-  -- file tree
-  {
-    "nvim-tree/nvim-tree.lua",
-    cmd = "NvimTreeToggle",
-    opts = {
-      filters = {
-        dotfiles = false,
-        custom = { ".DS_Store", ".git" },
-      },
-      disable_netrw = true,
-      hijack_netrw = true,
-      hijack_cursor = true,
-      hijack_unnamed_buffer_when_opening = false,
-      update_cwd = true,
-      update_focused_file = {
-        enable = true,
-        update_cwd = false,
-      },
-      view = {
-        adaptive_size = false,
-        side = "right",
-        width = 30,
-      },
-      git = {
-        enable = true,
-        ignore = false,
-        timeout = 400,
-      },
-      filesystem_watchers = {
-        enable = true,
-      },
-      actions = {
-        open_file = {
-          resize_window = true,
-        },
-      },
-      renderer = {
-        -- highlight_git = false,
-        highlight_opened_files = "name",
-        root_folder_label = false,
-        indent_markers = {
-          enable = true,
-        },
-        icons = {
-          webdev_colors = false,
-          show = {
-            file = false,
-            folder = true,
-            folder_arrow = false,
-            git = true,
-          },
-        },
-      },
-    },
-    keys = {
-      { "<leader>te", ":NvimTreeToggle<CR>", mode = { "n", "v" }, desc = "file explorer" },
-    },
-  },
   -- tmux & windows
   "szw/vim-maximizer",
   "christoomey/vim-tmux-navigator",
-
   -- zen mode
   {
     "folke/zen-mode.nvim",

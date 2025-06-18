@@ -3,7 +3,7 @@
 # export TERM="xterm-256color"
 # [[ -n $TMUX ]] && export TERM="screen-256color" export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export PATH=/Applications/Stata/StataMP.app/Contents/MacOS:$PATH
+export PATH=/Applications/StataNow/StataMP.app/Contents/MacOS:$PATH
 
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8

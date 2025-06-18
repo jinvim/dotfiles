@@ -100,5 +100,5 @@ yabai -m rule --add title="^MiniPlayer$" manage=off
 yabai -m rule --add title="^Zotero$" title="Citation Dialog" manage=off
 # yabai -m rule --add app="^Finder$" manage=off
 
-yabai -m config external_bar all:24:0
+# yabai -m config external_bar all:24:0
 # yabai -m config external_bar all:0:24
