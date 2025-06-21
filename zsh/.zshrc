@@ -85,13 +85,8 @@ plugins=()
 #   export EDITOR='mvim'
 # fi
 
-alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-function dotm {
-  dot commit -m $1
-}
 alias e=nvim
 alias lg=lazygit
-alias ld='lazygit --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias c=z
 alias ci=zi
 alias l="eza -l --group-directories-first --icons"
@@ -102,8 +97,6 @@ function mc {
 }
 alias h="cd $HOME"
 alias s="source $HOME/.zshrc"
-alias rc="nvim $HOME/.zshrc"
-alias myip="curl https://checkip.dydns.org/ | sed 's/[a-zA-Z<>/ :]//g'"
 alias f=spf
 
 # tmux
