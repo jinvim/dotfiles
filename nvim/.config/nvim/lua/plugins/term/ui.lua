@@ -42,7 +42,16 @@ return {
     dependencies = {
       {
         "SmiteshP/nvim-navic",
-        opts = { lsp = { auto_attach = true } },
+        opts = {
+          lsp = {
+            auto_attach = true,
+            preference = {
+              "marksman",
+              "pyright",
+              "r_language_server",
+            },
+          }
+        },
       },
     },
     opts = {},
@@ -81,7 +90,7 @@ return {
     event = "VimEnter",
     cmd = { "Trouble" },
     keys = {
-      { "<leader>td", "<cmd>Trouble diagnostics toggle<cr>", mode = { "n", "v" }, desc = "diagnostics" },
+      { "<leader>tt", "<cmd>Trouble diagnostics toggle<cr>", mode = { "n", "v" }, desc = "diagnostics" },
     },
     opts = {
       height = 5,

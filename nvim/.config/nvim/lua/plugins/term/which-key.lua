@@ -56,6 +56,13 @@ return {
         { "<leader>t", group = "toggle" },
         { "<leader>tL", ":set rnu!<CR>", desc = "toggle relative number" },
         { "<leader>tl", ":set nu! rnu!<CR>", desc = "toggle line number" },
+        {
+          "<leader>td",
+          function()
+            vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+          end,
+          desc = "toggle diagnostics",
+        },
 
         -- window
         { "<leader>w", group = "windows" },
@@ -82,8 +89,20 @@ return {
         { "gI", vim.lsp.buf.implementation, desc = "goto implementation" },
         { "gy", vim.lsp.buf.type_definition, desc = "goto t[y]pe definition" },
         { "gD", vim.lsp.buf.declaration, desc = "goto declaration" },
-        { "K", function() return vim.lsp.buf.hover() end, desc = "hover" },
-        { "gK", function() return vim.lsp.buf.signature_help() end, desc = "signature help" },
+        {
+          "K",
+          function()
+            return vim.lsp.buf.hover()
+          end,
+          desc = "hover",
+        },
+        {
+          "gK",
+          function()
+            return vim.lsp.buf.signature_help()
+          end,
+          desc = "signature help",
+        },
 
         { "<leader>c", group = "code" },
         { "<leader>ca", vim.lsp.buf.code_action, desc = "code action", mode = { "n", "v" } },

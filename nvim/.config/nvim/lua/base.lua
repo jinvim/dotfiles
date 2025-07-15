@@ -18,7 +18,7 @@ opt.history = 50
 
 opt.mouse = "a"
 
-api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
+vim.keymap.set("", "<Space>", "<Nop>")
 
 g.mapleader = " "
 g.maplocalleader = " "
@@ -38,8 +38,8 @@ opt.cursorline = true
 opt.signcolumn = "yes"
 -- toggle cmdheight when using macro
 -- opt.cmdheight=0
-vim.cmd [[ autocmd RecordingEnter * set cmdheight=1 ]]
-vim.cmd [[ autocmd RecordingLeave * set cmdheight=0 ]]
+-- vim.cmd [[ autocmd RecordingEnter * set cmdheight=1 ]]
+-- vim.cmd [[ autocmd RecordingLeave * set cmdheight=0 ]]
 -- opt.pumheight = 10
 opt.pumblend = 15
 opt.winblend = 15

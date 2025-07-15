@@ -6,6 +6,9 @@ return {
       lspconfig.marksman.setup({
         filetypes = { "markdown", "quarto" },
       })
+      lspconfig.vale_ls.setup({
+        filetypes = { "markdown", "quarto", "text" },
+      })
     end,
   },
   {
