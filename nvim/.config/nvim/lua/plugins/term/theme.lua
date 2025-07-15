@@ -1,16 +1,16 @@
 return {
   -- themes
   {
-    "sainnhe/everforest" ,
+    "sainnhe/gruvbox-material" ,
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      vim.cmd.colorscheme("everforest")
-      vim.g.everforest_enable_italic = true
-      vim.g.everforest_background = "hard"
+      vim.cmd.colorscheme("gruvbox-material")
+      vim.g.gruvbox_material_enable_italic = true
+      vim.g.gruvbox_material_background = "hard"
 
-      local theme_config = vim.fn['everforest#get_configuration']()
-      local colors = vim.fn['everforest#get_palette'](theme_config.background, theme_config.colors_override)
+      local theme_config = vim.fn['gruvbox_material#get_configuration']()
+      local colors = vim.fn['gruvbox_material#get_palette'](theme_config.background, theme_config.foreground, theme_config.colors_override)
 
       if theme_config.transparent_background == 2 then
         colors.bg1 = colors.none

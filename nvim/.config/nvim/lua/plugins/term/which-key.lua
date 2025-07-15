@@ -19,8 +19,8 @@ return {
         { "<leader><TAB>", ":bnext <CR>", desc = "next buffer" },
         { "<leader><S-TAB>", ":bprev <CR>", desc = "previous buffer" },
         { "<leader><leader>", "<cmd>Telescope buffers<cr>", desc = "switch buffer" },
-        { "<leader>/", ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>", desc = "replace word" },
-        { "<leader>?", ":%s/<C-r><C-w>/<C-r>0/g<CR>", desc = "replace word with register" },
+        { "<leader>s", ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>", desc = "replace word" },
+        { "<leader>S", ":%s/<C-r><C-w>/<C-r>0/g<CR>", desc = "replace word with register" },
         { "<leader>u", ":Telescope undo<cr>", desc = "undo history" },
 
         -- buffer
