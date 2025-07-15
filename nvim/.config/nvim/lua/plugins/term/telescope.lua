@@ -65,5 +65,21 @@ return {
       telescope.load_extension("ui-select")
       telescope.load_extension("undo")
     end,
+    keys = {
+      -- basics
+      { "<leader><leader>", "<cmd>Telescope buffers<cr>", mode = { "n", "v" }, desc = "switch buffer" },
+      { "<leader>L", "<cmd>Telescope persisted<cr>", mode = { "n", "v" }, desc = "choose last session" },
+      { "<leader>u", ":Telescope undo<cr>", mode = { "n", "v" }, desc = "undo history" },
+      -- buffer
+      { "<leader>bm", "<cmd>Telescope marks<cr>", mode = { "n", "v" }, desc = "search marks" },
+      -- file
+      { "<leader>ff", "<cmd>Telescope find_files<cr>", mode = { "n", "v" }, desc = "find files" },
+      { "<leader>fo", "<cmd>Telescope oldfiles<cr>", mode = { "n", "v" }, desc = "open recent file" },
+      { "<leader>fg", "<cmd>Telescope live_grep<cr>", mode = { "n", "v" }, desc = "live grep" },
+      -- help
+      { "<leader>hh", ":Telescope help_tags<cr>", mode = { "n", "v" }, desc = "search help tags" },
+      { "<leader>hk", ":Telescope keymaps<cr>", mode = { "n", "v" }, desc = "search keymaps" },
+      { "<leader>ht", ":Telescope colorscheme<cr>", mode = { "n", "v" }, desc = "change colorscheme" },
+    },
   },
 }

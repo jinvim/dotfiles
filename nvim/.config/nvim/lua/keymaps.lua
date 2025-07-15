@@ -48,7 +48,6 @@ map("n", "<M-]>", ">>")
 map("i", "<M-]>", "<C-t>")
 map("n", "<M-[>", "<<")
 map("i", "<M-[>", "<C-u>")
-
 -- lsp related
 map("n", "gk", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "open diagnostic"})
 map("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "code action"})

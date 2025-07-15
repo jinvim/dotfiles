@@ -37,7 +37,7 @@ opt.relativenumber = true
 opt.cursorline = true
 opt.signcolumn = "yes"
 -- toggle cmdheight when using macro
-opt.cmdheight=0
+-- opt.cmdheight=0
 vim.cmd [[ autocmd RecordingEnter * set cmdheight=1 ]]
 vim.cmd [[ autocmd RecordingLeave * set cmdheight=0 ]]
 -- opt.pumheight = 10
