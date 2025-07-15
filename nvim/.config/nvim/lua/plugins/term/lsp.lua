@@ -32,4 +32,30 @@ return {
       },
     },
   },
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        lua = { "mystylua" },
+        python = { "isort", "black" },
+        quarto = { "injected" },
+        r = { lsp_format = "fallback" },
+      },
+      formatters = {
+        mystylua = {
+          command = "stylua",
+          args = { "--indent-type", "Spaces", "--indent-width", "2", "-" },
+        },
+      },
+    },
+    keys = {
+      {
+        "<leader>p",
+        function()
+          require("conform").format()
+        end,
+        desc = "format",
+      },
+    },
+  },
 }

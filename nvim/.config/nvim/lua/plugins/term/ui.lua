@@ -125,40 +125,37 @@ return {
     "nvimdev/indentmini.nvim",
     opts = {},
   },
-  -- scroll bar
   {
-    "petertriho/nvim-scrollbar",
-    opts = function()
-      local theme_config = vim.fn["everforest#get_configuration"]()
-      local colors = vim.fn["everforest#get_palette"](theme_config.background, theme_config.colors_override)
-
-      return {
-        handlers = {
-          search = true,
-        },
-        handle = {
-          color = colors.bg4[1],
-          text = " ",
-        },
-        marks = {
-          Cursor = { text = "▁" },
-          Search = { text = { "▁" }, color = colors.orange[1] },
-          Error = { text = { "▗" }, color = colors.red[1] },
-          Warn = { text = { "▗" }, color = colors.yellow[1] },
-          Info = { text = { "▗" }, color = colors.blue[1] },
-          Hint = { text = { "▗" }, color = colors.aqua[1] },
-          Misc = { text = { "▗" }, color = colors.purple[1] },
-        },
-      }
-    end,
+    "NvChad/nvim-colorizer.lua",
+    event = "BufRead",
+    opts = {
+      user_default_options = {
+        AARRGGBB = true,
+      },
+    },
   },
   {
-    "kevinhwang91/nvim-hlslens",
+    "filipdutescu/renamer.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      title = "",
+      border_chars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+      empty = true,
+    },
+    keys = {
+      {
+        "<F2>",
+        function()
+          require("renamer").rename()
+        end,
+        desc = "rename",
+      },
+    },
+  },
+  -- git
+  {
+    "lewis6991/gitsigns.nvim",
+    event = "VimEnter",
     opts = {},
-    config = function()
-      require("scrollbar.handlers.search").setup({
-        calm_down = true,
-      })
-    end,
   },
 }
