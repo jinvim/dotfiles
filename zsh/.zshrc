@@ -153,3 +153,8 @@ spf() {
         rm -f -- "$SPF_LAST_DIR" > /dev/null
     }
 }
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/leejin/.lmstudio/bin"
+# End of LM Studio CLI section
+

@@ -4,39 +4,37 @@ return {
   -- status line
   {
     "nvim-lualine/lualine.nvim",
-    opts = function()
-      return {
-        options = {
-          icons_enabled = true,
-          section_separators = "",
-          component_separators = "",
-          globalstatus = true,
-        },
-        sections = {
-          lualine_a = {},
-          lualine_b = {},
-          lualine_c = { "diagnostics", "diff" },
-          lualine_x = {
-            {
-              "lsp_status",
-              icon = "󰈮", -- f013
-              symbols = {
-                -- Standard unicode symbols to cycle through for LSP progress:
-                spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
-                -- Standard unicode symbol for when LSP is done:
-                done = "✓",
-                -- Delimiter inserted between LSP names:
-                separator = " ",
-              },
-              -- List of LSP names to ignore (e.g., `null-ls`):
-              ignore_lsp = {},
+    opts = {
+      options = {
+        icons_enabled = true,
+        section_separators = "",
+        component_separators = "",
+        globalstatus = true,
+      },
+      sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { "diagnostics", "diff" },
+        lualine_x = {
+          {
+            "lsp_status",
+            icon = "󰈮", -- f013
+            symbols = {
+              -- Standard unicode symbols to cycle through for LSP progress:
+              spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
+              -- Standard unicode symbol for when LSP is done:
+              done = "✓",
+              -- Delimiter inserted between LSP names:
+              separator = " ",
             },
+            -- List of LSP names to ignore (e.g., `null-ls`):
+            ignore_lsp = {},
           },
-          lualine_y = { "searchcount" },
-          lualine_z = { "branch" },
         },
-      }
-    end,
+        lualine_y = { "searchcount" },
+        lualine_z = { "branch" },
+      },
+    },
   },
   -- breadcrumbs
   {
@@ -91,6 +89,7 @@ return {
       use_diagnostic_sings = true,
     },
   },
+  -- file browser
   {
     "stevearc/oil.nvim",
     event = "VeryLazy",
@@ -120,5 +119,46 @@ return {
         ["q"] = { "actions.close", mode = "n" },
       },
     },
+  },
+  -- indent line
+  {
+    "nvimdev/indentmini.nvim",
+    opts = {},
+  },
+  -- scroll bar
+  {
+    "petertriho/nvim-scrollbar",
+    opts = function()
+      local theme_config = vim.fn["everforest#get_configuration"]()
+      local colors = vim.fn["everforest#get_palette"](theme_config.background, theme_config.colors_override)
+
+      return {
+        handlers = {
+          search = true,
+        },
+        handle = {
+          color = colors.bg4[1],
+          text = " ",
+        },
+        marks = {
+          Cursor = { text = "▁" },
+          Search = { text = { "▁" }, color = colors.orange[1] },
+          Error = { text = { "▗" }, color = colors.red[1] },
+          Warn = { text = { "▗" }, color = colors.yellow[1] },
+          Info = { text = { "▗" }, color = colors.blue[1] },
+          Hint = { text = { "▗" }, color = colors.aqua[1] },
+          Misc = { text = { "▗" }, color = colors.purple[1] },
+        },
+      }
+    end,
+  },
+  {
+    "kevinhwang91/nvim-hlslens",
+    opts = {},
+    config = function()
+      require("scrollbar.handlers.search").setup({
+        calm_down = true,
+      })
+    end,
   },
 }

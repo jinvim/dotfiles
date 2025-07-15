@@ -34,7 +34,7 @@ opt.undofile = true
 opt.number = true
 opt.relativenumber = true
 
--- opt.cursorline = true
+opt.cursorline = true
 opt.signcolumn = "yes"
 -- toggle cmdheight when using macro
 opt.cmdheight=0
@@ -67,7 +67,7 @@ opt.splitbelow = true
 
 opt.ignorecase = true
 opt.smartcase = true
-opt.hlsearch = false
+opt.hlsearch = true
 opt.incsearch = true
 
 -- other
@@ -93,4 +93,5 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
     },
   },
+  virtual_text = true,
 })

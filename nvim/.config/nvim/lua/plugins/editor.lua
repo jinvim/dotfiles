@@ -31,6 +31,7 @@ return {
     opts = {
       title = "",
       border_chars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+      empty = true,
     },
     keys = {
       {
