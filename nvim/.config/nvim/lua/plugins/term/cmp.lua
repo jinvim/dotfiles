@@ -4,6 +4,7 @@ return {
     dependencies = {
       "rafamadriz/friendly-snippets",
       "fang2hou/blink-copilot",
+      "jmbuhr/cmp-pandoc-references",
     },
     version = "*",
     opts = {
@@ -22,7 +23,7 @@ return {
         nerd_font_variant = "mono",
       },
       sources = {
-        default = { "copilot", "lsp", "path", "snippets", "buffer" },
+        default = { "references", "copilot", "lsp", "path", "snippets", "buffer" },
         -- default = { "lsp", "path", "snippets", "buffer" },
         providers = {
           copilot = {
@@ -30,6 +31,10 @@ return {
             module = "blink-copilot",
             score_offset = 100,
             async = true,
+          },
+          references = {
+            name = "pandoc_references",
+            module = "cmp-pandoc-references.blink",
           },
         },
       },
