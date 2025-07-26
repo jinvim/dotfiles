@@ -116,12 +116,6 @@ alias dp="docker compose pull"
 alias python=python3
 alias pip=pip3
 
-alias cr="cargo run"
-alias cb="cargo build"
-alias cbr="cargo build --release"
-alias ct="cargo test"
-alias cn="cargo new"
-alias cnn="cargo new --vcs none"
 
 export HOMEBREW_NO_AUTO_UPDATE=true
 export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
