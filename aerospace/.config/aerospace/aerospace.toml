@@ -104,14 +104,14 @@ ctrl-q = 'workspace q'
 alt-e = ['flatten-workspace-tree', 'mode main'] # reset layout
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-ctrl-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
-ctrl-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
-ctrl-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
-ctrl-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
-ctrl-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
-ctrl-shift-0 = ['move-node-to-workspace 10', 'workspace 10']
-ctrl-shift-t = ['move-node-to-workspace t', 'workspace t']
-ctrl-shift-q = ['move-node-to-workspace q', 'workspace q']
+ctrl-alt-1 = ['move-node-to-workspace 1', 'workspace 1']
+ctrl-alt-2 = ['move-node-to-workspace 2', 'workspace 2']
+ctrl-alt-3 = ['move-node-to-workspace 3', 'workspace 3']
+ctrl-alt-4 = ['move-node-to-workspace 4', 'workspace 4']
+ctrl-alt-5 = ['move-node-to-workspace 5', 'workspace 5']
+ctrl-alt-0 = ['move-node-to-workspace 10', 'workspace 10']
+ctrl-alt-t = ['move-node-to-workspace t', 'workspace t']
+ctrl-alt-q = ['move-node-to-workspace q', 'workspace q']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 ctrl-tab = 'workspace-back-and-forth'
@@ -122,8 +122,8 @@ alt-m = 'join-with left'
 
 
 # applications
-## kitty
-alt-t = 'exec-and-forget kitty --single-instance -d ~'
+## terminal
+alt-enter = 'exec-and-forget open -a Ghostty'
 
 ## Finder
 # alt-n = 'exec-and-forget open -a Finder'
@@ -203,11 +203,8 @@ run = 'move-node-to-workspace 5'
 if.app-id = 'com.apple.Music'
 run = 'move-node-to-workspace 10'
 
-
 # t - terminal
-[[on-window-detected]]
-if.app-id = 'net.kovidgoyal.kitty'
-run = 'move-node-to-workspace t'
+# disabled to use ghostty quick terminal
 
 # q - ai
 [[on-window-detected]]
