@@ -44,4 +44,6 @@ if vim.loop.os_uname().sysname == "Darwin" then
       ft = { "quarto" },
     },
   }
+else
+  return {}
 end
