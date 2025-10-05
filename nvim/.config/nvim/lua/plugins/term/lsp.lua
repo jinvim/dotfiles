@@ -2,26 +2,30 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require("lspconfig")
-      lspconfig.marksman.setup({
+      vim.lsp.config("marksman", {
         filetypes = { "markdown", "quarto" },
       })
-      lspconfig.vale_ls.setup({
+      vim.lsp.config("vale_ls", {
         filetypes = { "markdown", "quarto", "text" },
       })
     end,
   },
   {
-    "williamboman/mason.nvim",
-    cmd = "Mason",
-    keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
-    build = ":MasonUpdate",
-    opts_extend = { "ensure_installed" },
-    opts = {
-      ensure_installed = {
-        "stylua",
-        "shfmt",
+    "mason-org/mason-lspconfig.nvim",
+    opts = {},
+    dependencies = {
+      {
+        "mason-org/mason.nvim",
+        cmd = "Mason",
+        keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
+        opts = {
+          ensure_installed = {
+            "stylua",
+            "shfmt",
+          },
+        },
       },
+      "neovim/nvim-lspconfig",
     },
   },
   {
