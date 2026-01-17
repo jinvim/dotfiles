@@ -9,3 +9,8 @@ email = sjbase@me.com
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/run/current-system/sw/bin/gh auth git-credential
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

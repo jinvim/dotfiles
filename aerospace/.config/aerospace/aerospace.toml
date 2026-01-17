@@ -114,7 +114,7 @@ ctrl-alt-t = ['move-node-to-workspace t', 'workspace t']
 ctrl-alt-q = ['move-node-to-workspace q', 'workspace q']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-ctrl-tab = 'workspace-back-and-forth'
+alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 # alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
@@ -123,7 +123,7 @@ alt-m = 'join-with left'
 
 # applications
 ## terminal
-alt-enter = 'exec-and-forget open -a Ghostty'
+alt-t = 'exec-and-forget open -a Ghostty'
 
 ## Finder
 # alt-n = 'exec-and-forget open -a Finder'

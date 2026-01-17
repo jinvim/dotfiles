@@ -9,3 +9,4 @@ macos-option-as-alt = true
 confirm-close-surface = false
 background-opacity = 1
 keybind = global:alt+grave_accent=toggle_quick_terminal
+font-family = FiraCode Nerd Font Mono
