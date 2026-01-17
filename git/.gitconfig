@@ -3,3 +3,9 @@
 # Please adapt and uncomment the following lines:
 name = Seonjin Lee
 email = sjbase@me.com
+[credential "https://github.com"]
+	helper = 
+	helper = !/run/current-system/sw/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/run/current-system/sw/bin/gh auth git-credential
