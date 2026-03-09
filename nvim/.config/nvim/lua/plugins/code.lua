@@ -5,7 +5,8 @@ if vim.g.vscode then
   local mappings = {
     -- doom emacs style shortcuts
     { 'n', '<leader>:', 'workbench.action.showCommands' },
-    { 'n', '<leader>*', 'workbench.action.showAllSymbols' },
+    { 'n', '<leader>s', 'workbench.action.gotoSymbol' },
+    { 'n', '<leader>S', 'workbench.action.showAllSymbols' },
     { 'n', '<leader><leader>', 'workbench.action.quickOpen' },
     { 'n', '<leader><TAB>', 'workbench.action.nextEditorInGroup' },
     { 'n', '<leader><S-TAB>', 'workbench.action.previousEditorInGroup' },
