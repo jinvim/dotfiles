@@ -1,5 +1,7 @@
 -- keymappings for vscode-neovim plugin
 if vim.g.vscode then
+  -- disable report messages
+  vim.opt.report = 10000
   local opts = { noremap = true, silent = true }
 
   local mappings = {
