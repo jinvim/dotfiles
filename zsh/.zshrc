@@ -12,18 +12,6 @@ export GDK_BACKEND=wayland
 export EDITOR=$(which nvim)
 export PATH=$HOME/go/bin:$PATH
 
-if [[ $(uname -m) == 'arm64' ]]; then
-  export PATH=/opt/homebrew/bin:$PATH
-  export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
-  export LDFLAGS="-L/opt/homebrew/opt/sqlite/lib"
-  export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include"
-  export PKG_CONFIG_PATH="/opt/homebrew/opt/sqlite/lib/pkgconfig"
-  export ARCHFLAGS="-arch arm64"
-  export QUARTO_PYTHON="/opt/homebrew/bin/python3"
-  export RETICULATE_PYTHON="/opt/homebrew/bin/python3"
-  export XDG_CONFIG_HOME="$HOME/.config"
-fi
-
 source $HOME/antigen.zsh
 
 # Load the oh-my-zsh's library.
@@ -118,13 +106,9 @@ alias pip=pip3
 
 
 export HOMEBREW_NO_AUTO_UPDATE=true
-export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/leejin/.cache/lm-studio/bin"
 
 # spf cd on quit
 spf() {
@@ -151,4 +135,9 @@ spf() {
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/leejin/.lmstudio/bin"
 # End of LM Studio CLI section
+#
 
+# Use local configs
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi

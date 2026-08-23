@@ -60,7 +60,7 @@ yabai -m rule --add app="Calendar" space=5
 yabai -m rule --add app="Reminders" space=5
 
 # Space 6 AI
-yabai -m rule --add app="Claude"     space=6
+# yabai -m rule --add app="Claude"     space=6
 
 # yabai -m rule --add app="Microsoft Word"     space=2
 # yabai -m rule --add app="Microsoft PowerPoint"     space=2
