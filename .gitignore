@@ -1,3 +1,5 @@
 .DS_Store
 nvim/.config/nvim/lazy-lock.json
 vale/.config/vale/styles
+pi/.pi/agent/extensions/filechanges/node_modules/*
+pi/.pi/agent/extensions/filechanges/package-lock.json

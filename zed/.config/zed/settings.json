@@ -1,0 +1,74 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "auto_update": false,
+  "edit_predictions": {
+    "provider": "copilot"
+  },
+  "tab_size": 4,
+  "languages": {
+    "Nix": {
+      "tab_size": 4
+    }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "vim_mode": true,
+  "terminal": {
+    "env": {
+      "FIG_NEW_SESSION": "\"1\""
+    },
+    "font_size": 16.0
+  },
+  "base_keymap": "VSCode",
+  "tab_bar": {
+    "show_tab_bar_buttons": false
+  },
+  "relative_line_numbers": "enabled",
+  "sticky_scroll": {
+    "enabled": false
+  },
+  "gutter": {
+    "line_numbers": true
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "buffer_font_fallbacks": [
+    "Consolas",
+    "Courier New",
+    "monospa"
+  ],
+  "buffer_font_family": "FiraCode Nerd Font Mono",
+  "show_edit_predictions": true,
+  "soft_wrap": "editor_width",
+  "agent_servers": {
+    "pi-acp": {
+      "type": "registry"
+    },
+    "github-copilot-cli": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 16.0,
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Gruvbox Material",
+  },
+}
