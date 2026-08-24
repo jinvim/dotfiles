@@ -9,9 +9,9 @@ return {
     },
     config = function(_, opts)
       local wk = require("which-key")
-      vim.cmd("hi WhichKeyNormal guibg=#1d2021")
-      vim.cmd("hi WhichKeyBorder guibg=#1d2021")
-      vim.cmd("hi WhichKeyTitle guibg=#1d2021")
+      vim.cmd("hi WhichKeyNormal guibg=#282828")
+      vim.cmd("hi WhichKeyBorder guibg=#282828")
+      vim.cmd("hi WhichKeyTitle guibg=#282828")
       wk.setup(opts)
       wk.add({
         -- leader maps
