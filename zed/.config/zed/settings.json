@@ -7,6 +7,11 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
   "auto_update": false,
   "edit_predictions": {
     "provider": "copilot"
@@ -67,7 +72,7 @@
   "ui_font_size": 16,
   "buffer_font_size": 16.0,
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Ayu Light",
     "dark": "Gruvbox Material",
   },
