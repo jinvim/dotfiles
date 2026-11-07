@@ -3,7 +3,7 @@ animate = false
 
 default_disable = false
 
-focus_follows_mouse = true
+focus_follows_mouse = false
 mouse_follows_focus = false
 
 hot_reload = true
@@ -16,6 +16,9 @@ master_ratio = 0.5
 master_count = 1
 master_side = "left"
 new_window_placement = "stack"
+
+[settings.layout.stack]
+stack_offset = 0.0
 
 [settings.layout.gaps.outer]
 top = 6.0
@@ -45,7 +48,7 @@ haptics_enabled = false
 
 [virtual_workspaces]
 enabled = true
-default_workspace_count = 4
+default_workspace_count = 5
 auto_assign_windows = true
 preserve_focus_per_workspace = true
 workspace_auto_back_and_forth = false
@@ -53,15 +56,24 @@ prevent_wrapping = false
 reapply_app_rules_on_title_change = false
 
 # workspace-specific rules
-# workspace_rules = [
-#   { workspace = 1, layout = "bsp" },
-# ]
+workspace_rules = [
+  { workspace = 0, layout = "master_stack" },
+  { workspace = 1, layout = "master_stack" },
+  { workspace = 2, layout = "master_stack" },
+  { workspace = 3, layout = "master_stack" },
+  { workspace = 4, layout = "stack" }
+]
 # All four workspaces inherit settings.layout.mode (traditional).
-workspace_rules = []
+# workspace_rules = []
 
 app_rules = [
   { app_name = "Positron", workspace = 3 },
   { app_name = "Code", workspace = 3 },
+  { app_name = "Zed", workspace = 3 },
+  { app_name = "Mail", workspace = 4 },
+  { app_name = "Notes", workspace = 4 },
+  { app_name = "Calender", workspace = 4 },
+  { app_name = "Reminders", workspace = 4 },
 
   # Apps and windows excluded from yabai management.
   { app_id = "com.apple.SystemSettings", manage = false },
@@ -77,7 +89,8 @@ workspace_names = [
   "first",
 	"second",
   "third",
-  "fourth"
+  "fourth",
+  "fifth"
 ]
 
 [modifier_combinations]
@@ -101,19 +114,23 @@ comb1 = "Alt + Shift"
 "wm1 + 2" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 0 && rift-cli execute workspace switch 1"] }
 "wm1 + 3" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 0 && rift-cli execute workspace switch 2"] }
 "wm1 + 4" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 0 && rift-cli execute workspace switch 3"] }
-"wm1 + 5" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 1 && rift-cli execute workspace switch 0"] }
-"wm1 + 6" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 1 && rift-cli execute workspace switch 1"] }
-"wm1 + 7" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 1 && rift-cli execute workspace switch 2"] }
-"wm1 + 8" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 1 && rift-cli execute workspace switch 3"] }
+"wm1 + 5" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 0 && rift-cli execute workspace switch 4"] }
+"wm1 + 6" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 1 && rift-cli execute workspace switch 0"] }
+"wm1 + 7" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 1 && rift-cli execute workspace switch 1"] }
+"wm1 + 8" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 1 && rift-cli execute workspace switch 2"] }
+"wm1 + 9" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 1 && rift-cli execute workspace switch 3"] }
+"wm1 + 0" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 1 && rift-cli execute workspace switch 4"] }
 
 "wm2 + 1" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 0 && rift-cli execute workspace move-window 0"] }
 "wm2 + 2" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 0 && rift-cli execute workspace move-window 1"] }
 "wm2 + 3" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 0 && rift-cli execute workspace move-window 2"] }
 "wm2 + 4" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 0 && rift-cli execute workspace move-window 3"] }
-"wm2 + 5" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 1 && rift-cli execute workspace move-window 0"] }
-"wm2 + 6" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 1 && rift-cli execute workspace move-window 1"] }
-"wm2 + 7" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 1 && rift-cli execute workspace move-window 2"] }
-"wm2 + 8" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 1 && rift-cli execute workspace move-window 3"] }
+"wm2 + 5" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 0 && rift-cli execute workspace move-window 4"] }
+"wm2 + 6" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 1 && rift-cli execute workspace move-window 0"] }
+"wm2 + 7" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 1 && rift-cli execute workspace move-window 1"] }
+"wm2 + 8" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 1 && rift-cli execute workspace move-window 2"] }
+"wm2 + 9" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 1 && rift-cli execute workspace move-window 3"] }
+"wm2 + 0" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 1 && rift-cli execute workspace move-window 4"] }
 
 
 # focus / window management
@@ -135,16 +152,13 @@ comb1 = "Alt + Shift"
 "focus2 + F" = "toggle_fullscreen"
 
 "focus2 + Space" = { toggle_window_floating = { center = true, size = "smart" } }
+"focus2 + A" = { set_workspace_layout = { mode = "floating" } }
+"focus2 + D" = { set_workspace_layout = { mode = "master_stack" } }
+"focus2 + S" = { set_workspace_layout = { mode = "stack" } }
 
 # "focus3 + Space" = "toggle_window_floating"
 # "focus2 + Space" = "toggle_focus_floating" # briefly bring focus to floating window
 # "Alt + Slash" = "toggle_orientation"
-
-# commands to change the layout engine of the active workspace
-# "Alt + Ctrl + 1" = { set_workspace_layout = { mode = "traditional" } }
-# "Alt + Ctrl + 2" = { set_workspace_layout = { mode = "bsp" } }
-# "Alt + Ctrl + 3" = { set_workspace_layout = { mode = "master_stack" } }
-# "Alt + Ctrl + 4" = { set_workspace_layout = { mode = "scrolling" } }
 
 # app launchers
 # "Alt + N" = { "exec" = ["/usr/bin/open", "-a", "Finder"] }
