@@ -35,7 +35,7 @@ vertical = 6.0
 enabled = true
 show_empty = false
 mode = "all"
-active_label = "index"
+active_label = "name"
 display_style = "label"
 
 # enable horizontal swipes to switch virtual workspaces
@@ -48,32 +48,52 @@ haptics_enabled = false
 
 [virtual_workspaces]
 enabled = true
-default_workspace_count = 5
+default_workspace_count = 9
 auto_assign_windows = true
 preserve_focus_per_workspace = true
 workspace_auto_back_and_forth = false
 prevent_wrapping = false
 reapply_app_rules_on_title_change = false
 
+workspace_names = [
+  "home",
+	"web",
+  "work",
+  "dev",
+  "org",
+  "read",
+  "media",
+  "ai",
+  "term"
+]
+
 # workspace-specific rules
 workspace_rules = [
-  { workspace = 0, layout = "master_stack" },
-  { workspace = 1, layout = "master_stack" },
-  { workspace = 2, layout = "master_stack" },
-  { workspace = 3, layout = "master_stack" },
-  { workspace = 4, layout = "stack" }
+  { workspace = 0, layout = "master_stack", display = ["left", "builtin"] }, # home
+  { workspace = 1, layout = "master_stack", display = ["left", "builtin"] }, # web
+  { workspace = 2, layout = "master_stack", display = ["left", "builtin"] }, # work
+  { workspace = 3, layout = "stack", display = ["left", "builtin"] }, # dev
+  { workspace = 4, layout = "stack", display = ["right", "builtin"] }, # org
+  { workspace = 5, layout = "bsp", display = ["right", "builtin"] }, # read
+  { workspace = 6, layout = "stack", display = ["right", "builtin"] }, # media
+  { workspace = 7, layout = "bsp", display = ["right", "builtin"] }, # ai
+  { workspace = 8, layout = "master_stack", display = ["left", "builtin"]} # term
 ]
 # All four workspaces inherit settings.layout.mode (traditional).
 # workspace_rules = []
 
 app_rules = [
+  # dev
   { app_name = "Positron", workspace = 3 },
   { app_name = "Code", workspace = 3 },
   { app_name = "Zed", workspace = 3 },
+  # org
   { app_name = "Mail", workspace = 4 },
   { app_name = "Notes", workspace = 4 },
   { app_name = "Calender", workspace = 4 },
   { app_name = "Reminders", workspace = 4 },
+  # media
+  { app_name = "Music", workspace = 6 },
 
   # Apps and windows excluded from yabai management.
   { app_id = "com.apple.SystemSettings", manage = false },
@@ -83,14 +103,6 @@ app_rules = [
   { app_id = "com.raycast.macos", manage = false },
   { title_substring = "MiniPlayer", manage = false },
   { app_name = "Zotero", title_substring = "Citation Dialog", manage = false },
-]
-
-workspace_names = [
-  "first",
-	"second",
-  "third",
-  "fourth",
-  "fifth"
 ]
 
 [modifier_combinations]
@@ -110,28 +122,25 @@ comb1 = "Alt + Shift"
 
 # workspace / display management
 # below hack allows assigning different keybindings for different displays
-"wm1 + 1" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 0 && rift-cli execute workspace switch 0"] }
-"wm1 + 2" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 0 && rift-cli execute workspace switch 1"] }
-"wm1 + 3" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 0 && rift-cli execute workspace switch 2"] }
-"wm1 + 4" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 0 && rift-cli execute workspace switch 3"] }
-"wm1 + 5" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 0 && rift-cli execute workspace switch 4"] }
-"wm1 + 6" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 1 && rift-cli execute workspace switch 0"] }
-"wm1 + 7" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 1 && rift-cli execute workspace switch 1"] }
-"wm1 + 8" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 1 && rift-cli execute workspace switch 2"] }
-"wm1 + 9" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 1 && rift-cli execute workspace switch 3"] }
-"wm1 + 0" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display focus --index 1 && rift-cli execute workspace switch 4"] }
+"wm1 + 1" = { switch_to_workspace = 0 }
+"wm1 + 2" = { switch_to_workspace = 1 }
+"wm1 + 3" = { switch_to_workspace = 2 }
+"wm1 + 4" = { switch_to_workspace = 3 }
+"wm1 + 5" = { switch_to_workspace = 4 }
+"wm1 + 6" = { switch_to_workspace = 5 }
+"wm1 + 8" = { switch_to_workspace = 6 }
+"wm1 + 9" = { switch_to_workspace = 7 }
+"wm1 + 0" = { switch_to_workspace = 8 }
 
-"wm2 + 1" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 0 && rift-cli execute workspace move-window 0"] }
-"wm2 + 2" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 0 && rift-cli execute workspace move-window 1"] }
-"wm2 + 3" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 0 && rift-cli execute workspace move-window 2"] }
-"wm2 + 4" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 0 && rift-cli execute workspace move-window 3"] }
-"wm2 + 5" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 0 && rift-cli execute workspace move-window 4"] }
-"wm2 + 6" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 1 && rift-cli execute workspace move-window 0"] }
-"wm2 + 7" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 1 && rift-cli execute workspace move-window 1"] }
-"wm2 + 8" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 1 && rift-cli execute workspace move-window 2"] }
-"wm2 + 9" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 1 && rift-cli execute workspace move-window 3"] }
-"wm2 + 0" = { "exec" = ["/bin/bash", "-c", "rift-cli execute display move-window --index 1 && rift-cli execute workspace move-window 4"] }
-
+"wm2 + 1" = { move_window_to_workspace = 0 }
+"wm2 + 2" = { move_window_to_workspace = 1 }
+"wm2 + 3" = { move_window_to_workspace = 2 }
+"wm2 + 4" = { move_window_to_workspace = 3 }
+"wm2 + 5" = { move_window_to_workspace = 4 }
+"wm2 + 6" = { move_window_to_workspace = 5 }
+"wm2 + 8" = { move_window_to_workspace = 6 }
+"wm2 + 9" = { move_window_to_workspace = 7 }
+"wm2 + 0" = { move_window_to_workspace = 8 }
 
 # focus / window management
 "focus1 + H" = { move_focus = "left" }
@@ -155,10 +164,11 @@ comb1 = "Alt + Shift"
 "focus2 + A" = { set_workspace_layout = { mode = "floating" } }
 "focus2 + D" = { set_workspace_layout = { mode = "master_stack" } }
 "focus2 + S" = { set_workspace_layout = { mode = "stack" } }
+"focus2 + B" = { set_workspace_layout = { mode = "bsp" } }
 
 # "focus3 + Space" = "toggle_window_floating"
 # "focus2 + Space" = "toggle_focus_floating" # briefly bring focus to floating window
-# "Alt + Slash" = "toggle_orientation"
+"focus1 + S" = "toggle_orientation"
 
 # app launchers
 # "Alt + N" = { "exec" = ["/usr/bin/open", "-a", "Finder"] }
